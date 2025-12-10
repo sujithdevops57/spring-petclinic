@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: spring-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: spring-petclinic
   template:
     metadata:
       labels:
-        app: nginx
+        app: spring-petclinic
     spec:
       containers:
-        - name: nginx
+        - name: spring-petclinic
           image: us-east1-docker.pkg.dev/rakesh-478806/sujith-gar/java:v1
           ports:
           - containerPort: 8080

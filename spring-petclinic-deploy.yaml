@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-deployment
+  namespace: sujith
 spec:
   replicas: 2
   selector:
@@ -12,8 +13,10 @@ spec:
       labels:
         app: spring-petclinic
     spec:
+      imagePullSecrets:
+        - name: artifact-secret   # <-- IMPORTANT (ADD THIS)
       containers:
         - name: spring-petclinic
           image: us-east1-docker.pkg.dev/rakesh-478806/sujith-gar/java:v1
           ports:
-          - containerPort: 8080
+            - containerPort: 8080

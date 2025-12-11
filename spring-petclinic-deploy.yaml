@@ -17,6 +17,6 @@ spec:
         - name: artifact-secret   # <-- IMPORTANT (ADD THIS)
       containers:
         - name: spring-petclinic
-          image: us-east1-docker.pkg.dev/rakesh-478806/sujith-gar/java:v1
+          image: us-central1-docker.pkg.dev/rakesh-478806/sujith-gar-repo/sp-img:v1
           ports:
             - containerPort: 8080

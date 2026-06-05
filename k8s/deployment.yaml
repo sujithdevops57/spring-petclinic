@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: springboot
+
+  template:
+    metadata:
+      labels:
+        app: springboot
+
+    spec:
+      containers:
+      - name: springboot
+
+        image: us-central1-docker.pkg.dev/project-bb91e704-0abb-42d8-a15/springboot-repo/petclinic:v1
+
+        ports:
+        - containerPort: 8080
